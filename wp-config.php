@@ -18,19 +18,24 @@
  */
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
-$db_url = parse_url(getenv('CLEARDB_DATABASE_URL'));
-$db = explode('/', $db_url['path']);
+$database_url = getenv('CLEARDB_DATABASE_URL');
+if (empty($database_url))
+	$database_url = "mysql://root:root@localhost:8888/wp_cvolcy?reconnect=true";
+$db_data = parse_url($database_url);
+$db = explode('/', $db_data['path']);
 /** Nom de la base de données de WordPress. */
 define('DB_NAME', $db[1]);
 
 /** Utilisateur de la base de données MySQL. */
-define('DB_USER', $db_url['user']);
+define('DB_USER', $db_data['user']);
 
 /** Mot de passe de la base de données MySQL. */
-define('DB_PASSWORD', $db_url['pass']);
+define('DB_PASSWORD', $db_data['pass']);
 
 /** Adresse de l'hébergement MySQL. */
-define('DB_HOST', $db_url['host']);
+if (!empty($db_data['port']))
+	$db_data['host'] .= ':'.$db_data['port'];
+define('DB_HOST', $db_data['host']);
 
 /** Jeu de caractères à utiliser par la base de données lors de la création des tables. */
 define('DB_CHARSET', 'utf8');
