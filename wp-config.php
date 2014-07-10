@@ -19,7 +19,7 @@
 
 // ** Réglages MySQL - Votre hébergeur doit vous fournir ces informations. ** //
 $db_url = parse_url(getenv('CLEARDB_DATABASE_URL'));
-$db = explode('/', $val['path']);
+$db = explode('/', $db_url['path']);
 /** Nom de la base de données de WordPress. */
 define('DB_NAME', $db[1]);
 
