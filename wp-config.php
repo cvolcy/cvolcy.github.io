@@ -27,7 +27,7 @@ define('DB_NAME', $db[1]);
 define('DB_USER', $db_url['user']);
 
 /** Mot de passe de la base de données MySQL. */
-define('DB_PASSWORD', $db_url['password']);
+define('DB_PASSWORD', $db_url['pass']);
 
 /** Adresse de l'hébergement MySQL. */
 define('DB_HOST', $db_url['host']);
