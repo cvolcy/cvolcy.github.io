@@ -468,4 +468,7 @@ add_action( 'wp_head' , array( 'Wilson_Customize' , 'header_output' ) );
 // Enqueue live preview javascript in Theme Customizer admin screen
 add_action( 'customize_preview_init' , array( 'Wilson_Customize' , 'live_preview' ) );
 
+add_filter( 'wilson_right_credit', function($value) {
+	return date('j.m.Y');
+});
 ?>

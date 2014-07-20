@@ -95,7 +95,7 @@
 				
 				<p class="credits-right">
 					
-					<span><?php printf( __( 'Theme by <a href="%s">Anders Noren</a>', 'wilson'), 'http://www.andersnoren.se' ); ?></span> &mdash; <a title="<?php _e('To the top', 'wilson'); ?>" class="tothetop"><?php _e('Up', 'wilson' ); ?> &uarr;</a>
+					<span><?php echo apply_filters( 'wilson_right_credit' , sprintf( __( 'Theme by <a href="%s">Anders Noren</a>', 'wilson'), 'http://www.andersnoren.se' ) ); ?></span> &mdash; <a title="<?php _e('To the top', 'wilson'); ?>" class="tothetop"><?php _e('Up', 'wilson' ); ?> &uarr;</a>
 					
 				</p>
 				
