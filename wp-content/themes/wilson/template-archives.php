@@ -53,13 +53,17 @@ Template Name: Archive template
 					            <h3><?php _e('Archives by Tags', 'wilson') ?></h3>
 					            
 					            <ul>
+					            
 					                <?php $tags = get_tags();
 					                
 					                if ($tags) {
 					                    foreach ($tags as $tag) {
 					                 	   echo '<li><a href="' . get_tag_link( $tag->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'wilson' ), $tag->name ) . '" ' . '>' . $tag->name.'</a></li> ';
 					                    }
-					                } ?>
+					                } 
+					                
+					                wp_reset_query(); ?>
+					                
 					            </ul>
 				            
 				            </div> <!-- /archive-col -->
@@ -110,7 +114,11 @@ Template Name: Archive template
 	
 			</div> <!-- /post -->
 			
-			<?php comments_template( '', true ); ?>
+			<?php if ( comments_open() ) : ?>
+			
+				<?php comments_template( '', true ); ?>
+			
+			<?php endif; ?>
 		
 		<?php endwhile; else: ?>
 

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Wilson v1.03\n"
+"Project-Id-Version: Wilson v1.19\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-02-13 10:59:12+0000\n"
+"PO-Revision-Date: 2014-08-06 09:51:52+0000\n"
 "Last-Translator: anders <anders@andersnoren.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -126,46 +126,39 @@ msgstr "Hemsida"
 
 #: content-aside.php:11
 #: content-quote.php:11
-#: content-video.php:90
+#: content-video.php:49
 #: content.php:49
 #@ wilson
 msgid "Sticky"
 msgstr "Klistrat"
 
-#: content-video.php:58
-#: single.php:92
-#: widgets/video-widget.php:59
-#@ wilson
-msgid "Your browser does not support the video tag."
-msgstr "Din webbläsare stödjer inte video-taggen."
-
-#: content-video.php:84
+#: content-video.php:43
 #: content.php:43
-#: single.php:118
+#: single.php:77
 #@ wilson
 msgid "0 Comments"
 msgstr "0 kommentarer"
 
-#: content-video.php:84
+#: content-video.php:43
 #: content.php:43
-#: single.php:118
+#: single.php:77
 #@ wilson
 msgid "1 Comment"
 msgstr "1 kommentar"
 
-#: content-video.php:84
+#: content-video.php:43
 #: content.php:43
-#: single.php:118
+#: single.php:77
 #@ wilson
 msgid "% Comments"
 msgstr "% kommentarer"
 
-#: content-video.php:98
+#: content-video.php:57
 #: content.php:57
-#: functions.php:264
+#: functions.php:272
 #: page.php:25
-#: single.php:124
-#: template-archives.php:101
+#: single.php:83
+#: template-archives.php:105
 #@ wilson
 msgid "Edit"
 msgstr "Redigera"
@@ -175,100 +168,94 @@ msgstr "Redigera"
 msgid "Sticky post"
 msgstr "Klistrat inlägg"
 
-#: footer.php:25
 #: searchform.php:2
 #@ wilson
 msgid "Search form"
 msgstr "Sökformulär"
 
-#: footer.php:60
-#@ wilson
-msgid "Latest posts"
-msgstr "Senaste inläggen"
-
-#: footer.php:98
+#: footer.php:47
 #, php-format
 #@ wilson
 msgid "Theme by <a href=\"%s\">Anders Noren</a>"
 msgstr "Tema av <a href=\"%s\">Anders Noren</a>"
 
-#: footer.php:98
+#: footer.php:47
 #@ wilson
 msgid "To the top"
 msgstr "Till toppen"
 
-#: footer.php:98
+#: footer.php:47
 #@ wilson
 msgid "Up"
 msgstr "Upp"
 
-#: functions.php:62
+#: functions.php:69
 #@ wilson
 msgid "Sidebar"
 msgstr "Sidomenu"
 
-#: functions.php:64
+#: functions.php:71
 #@ wilson
 msgid "Widgets in this area will be displayed in the sidebar."
 msgstr "Widgets i det här området kommer att visas i sidomenyn."
 
-#: functions.php:71
+#: functions.php:78
 #@ wilson
 msgid "Footer A"
 msgstr "Sidfot A"
 
-#: functions.php:73
+#: functions.php:80
 #@ wilson
 msgid "Widgets in this area will be displayed in the left column in the footer."
 msgstr "Widgets i det här området kommer att visas i den vänstra kolumnen i sidfoten."
 
-#: functions.php:80
+#: functions.php:87
 #@ wilson
 msgid "Footer B"
 msgstr "Sidfot B"
 
-#: functions.php:82
+#: functions.php:89
 #@ wilson
 msgid "Widgets in this area will be displayed in the right column in the footer."
 msgstr "Widgets i det här området kommer att visas i den högra kolumnen i sidfoten."
 
-#: functions.php:117
+#: functions.php:124
 #, php-format
 #@ wilson
 msgid "Page %s"
 msgstr "Sida %s"
 
-#: functions.php:164
+#: functions.php:171
 #@ wilson
 msgid "Continue reading"
 msgstr "Fortsätt läsa"
 
-#: functions.php:223
+#: functions.php:231
 #@ wilson
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: functions.php:223
+#: functions.php:231
 #@ wilson
 msgid "(Edit)"
 msgstr "(Redigera)"
 
-#: functions.php:243
+#: functions.php:251
 #@ wilson
 msgid "(Post author)"
 msgstr "(inläggsförfattare)"
 
-#: functions.php:256
+#: functions.php:264
 #@ wilson
 msgid "Awaiting moderation"
 msgstr "Inväntar modellering"
 
-#: functions.php:266
+#: functions.php:274
 #@ wilson
 msgid "Reply"
 msgstr "Svara"
 
-#: functions.php:284
+#: functions.php:293
 #@ wilson
 msgid "Video URL (video post format)"
 msgstr "Video-adress (för video-inläggsformatet)"
@@ -284,9 +271,9 @@ msgid "Next<span> attachment</span> &raquo;"
 msgstr "Nästa<span> bilaga</span> &raquo;"
 
 #: image.php:90
-#: page.php:41
-#: single.php:194
-#: template-archives.php:117
+#: page.php:45
+#: single.php:153
+#: template-archives.php:125
 #@ wilson
 msgid "We couldn't find any posts that matched your query. Please try again."
 msgstr "Vi kunde inte hitta några inlägg som matchade din sökning. Vänligen försök igen."
@@ -320,22 +307,22 @@ msgstr "Sök"
 msgid "No results. Try again, would you kindly?"
 msgstr "Inga resultat. Försök gärna igen."
 
-#: single.php:152
+#: single.php:111
 #@ wilson
 msgid "Categories:"
 msgstr "Kategorier:"
 
-#: single.php:154
+#: single.php:113
 #@ wilson
 msgid "Tags:"
 msgstr "Etiketter:"
 
-#: single.php:164
+#: single.php:123
 #@ wilson
 msgid "Previous post:"
 msgstr "Föregående inlägg:"
 
-#: single.php:176
+#: single.php:135
 #@ wilson
 msgid "Next post:"
 msgstr "Nästa inlägg:"
@@ -355,28 +342,28 @@ msgstr "Kategoriarkiv"
 msgid "Archives by Tags"
 msgstr "Etikettarkiv"
 
-#: template-archives.php:60
+#: template-archives.php:61
 #, php-format
 #@ wilson
 msgid "View all posts in %s"
 msgstr "Visa alla inlägg i %s"
 
-#: template-archives.php:69
+#: template-archives.php:73
 #@ wilson
 msgid "Contributors"
 msgstr "Författare"
 
-#: template-archives.php:75
+#: template-archives.php:79
 #@ wilson
 msgid "Archives by Year"
 msgstr "År"
 
-#: template-archives.php:81
+#: template-archives.php:85
 #@ wilson
 msgid "Archives by Month"
 msgstr "Månader"
 
-#: template-archives.php:87
+#: template-archives.php:91
 #@ wilson
 msgid "Archives by Day"
 msgstr "Dagar"
@@ -394,7 +381,7 @@ msgstr "Följ %s på Dribbble &raquo;"
 
 #: widgets/dribbble-widget.php:81
 #: widgets/flickr-widget.php:56
-#: widgets/video-widget.php:84
+#: widgets/video-widget.php:64
 #@ wilson
 msgid "Title"
 msgstr "Titel"
@@ -430,8 +417,44 @@ msgstr "Flickr ID (använd <a target=\"_blank\" href=\"http://www.idgettr.com\">
 msgid "Displays a video of your choosing."
 msgstr "Visar ett videoklipp."
 
-#: widgets/video-widget.php:90
+#: widgets/video-widget.php:70
 #@ wilson
 msgid "Video URL"
 msgstr "Video-adress"
+
+#: functions.php:341
+#@ wilson
+msgid "Wilson Options"
+msgstr "Wilson-inställningar"
+
+#: functions.php:344
+#@ wilson
+msgid "Allows you to customize theme options for Wilson."
+msgstr "Låter dig ställa in temainställningar för Wilson"
+
+#: functions.php:349
+#: functions.php:383
+#@ wilson
+msgid "Logo"
+msgstr "Logotyp"
+
+#: functions.php:351
+#@ wilson
+msgid "Upload a logo to replace the default site name and description in the sidebar"
+msgstr "Ladda upp en logotyp för att ersätta sidtiteln och -beskrivningen i sidopanelen"
+
+#: functions.php:375
+#@ wilson
+msgid "Accent Color"
+msgstr "Accentfärg"
+
+#: header.php:45
+#@ wilson
+msgid "Show menu"
+msgstr "Visa meny"
+
+#: header.php:46
+#@ wilson
+msgid "Hide menu"
+msgstr "Dölj meny"
 

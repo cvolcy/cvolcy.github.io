@@ -32,7 +32,11 @@
 							
 		</div> <!-- /post -->
 		
-		<?php comments_template( '', true ); ?>
+		<?php if ( comments_open() ) : ?>
+			
+			<?php comments_template( '', true ); ?>
+		
+		<?php endif; ?>
 	
 	</div> <!-- /posts -->
 	
