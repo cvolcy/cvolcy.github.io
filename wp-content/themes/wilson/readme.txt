@@ -18,3 +18,5 @@ Licenses
 Lato font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
 Raleway font license : SIL Open Font License, 1.1 http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
+
+screenshot.png post image license : Public Domain (CC0) http://en.wikipedia.org/wiki/Public_domain

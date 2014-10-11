@@ -12,27 +12,6 @@
 					
 				</div>
 				
-			<?php else : ?>
-			
-				<div class="column column-1 left">
-				
-					<div class="widgets">
-				
-						<div id="search" class="widget widget_search">
-						
-							<div class="widget-content">
-							
-								<h3 class="widget-title"><?php _e( 'Search form', 'wilson' ); ?></h3>
-				                <?php get_search_form(); ?>
-				                
-							</div>
-							
-		                </div>
-										
-					</div>
-					
-				</div>
-				
 			<?php endif; ?> <!-- /footer-a -->
 				
 			<?php if ( is_active_sidebar( 'footer-b' ) ) : ?>
@@ -43,36 +22,6 @@
 			
 						<?php dynamic_sidebar( 'footer-b' ); ?>
 											
-					</div> <!-- /widgets -->
-					
-				</div>
-				
-			<?php else : ?>
-			
-				<div class="column column-2 left">
-				
-					<div class="widgets">
-					
-						<div class="widget widget_recent_entries">
-						
-							<div class="widget-content">
-							
-								<h3 class="widget-title"><?php _e( 'Latest posts', 'wilson' ); ?></h3>
-								
-								<ul>
-					                <?php
-										$args = array( 'numberposts' => '5' );
-										$recent_posts = wp_get_recent_posts( $args );
-										foreach( $recent_posts as $recent ){
-											echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="'.esc_attr($recent["post_title"]).'" >' .   $recent["post_title"].'</a> </li> ';
-										}
-									?>
-								</ul>
-				                
-							</div>
-							
-		                </div>
-										
 					</div> <!-- /widgets -->
 					
 				</div>
@@ -95,7 +44,7 @@
 				
 				<p class="credits-right">
 					
-					<span><?php echo apply_filters( 'wilson_right_credit' , sprintf( __( 'Theme by <a href="%s">Anders Noren</a>', 'wilson'), 'http://www.andersnoren.se' ) ); ?></span> &mdash; <a title="<?php _e('To the top', 'wilson'); ?>" class="tothetop"><?php _e('Up', 'wilson' ); ?> &uarr;</a>
+					<span><?php printf( __( 'Theme by <a href="%s">Anders Noren</a>', 'wilson'), 'http://www.andersnoren.se' ); ?></span> &mdash; <a title="<?php _e('To the top', 'wilson'); ?>" class="tothetop"><?php _e('Up', 'wilson' ); ?> &uarr;</a>
 					
 				</p>
 				

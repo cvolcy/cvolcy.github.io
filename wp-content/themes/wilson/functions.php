@@ -9,7 +9,8 @@ function wilson_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	
 	// Post thumbnails
-	add_theme_support( 'post-thumbnails' ); add_image_size( 'post-image', 788, 9999 );
+	add_theme_support( 'post-thumbnails' ); 
+	add_image_size( 'post-image', 788, 9999 );
 	
 	// Post formats
 	add_theme_support( 'post-formats', array( 'video', 'aside', 'quote' ) );
@@ -30,12 +31,11 @@ function wilson_setup() {
 // Enqueue Javascript files
 function wilson_load_javascript_files() {
 
-	if ( !is_admin() )
-		wp_register_script( 'wilson_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
-		
+	if ( !is_admin() ) {
 		wp_enqueue_script( 'jquery' );	
-		wp_enqueue_script( 'wilson_global' );
+		wp_enqueue_script( 'wilson_global', get_template_directory_uri().'/js/global.js', array('jquery'), '', true );
 		if ( is_singular() ) wp_enqueue_script( "comment-reply" );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'wilson_load_javascript_files' );
@@ -43,15 +43,22 @@ add_action( 'wp_enqueue_scripts', 'wilson_load_javascript_files' );
 
 // Enqueue styles
 function wilson_load_style() {
-	if ( !is_admin() )
-	    wp_register_style('wilson_googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:400,700' );
-		wp_register_style('wilson_style', get_stylesheet_uri() );
-		
-	    wp_enqueue_style( 'wilson_googleFonts' );
-	    wp_enqueue_style( 'wilson_style' );
+	if ( !is_admin() ) {
+	    wp_enqueue_style( 'wilson_googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:400,700' );
+	    wp_enqueue_style( 'wilson_style', get_stylesheet_uri() );
+	}
 }
 
 add_action('wp_enqueue_scripts', 'wilson_load_style');
+
+
+// Add editor styles
+function wilson_add_editor_styles() {
+    add_editor_style( 'wilson-editor-styles.css' );
+    $font_url = '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Raleway:400,700';
+    add_editor_style( str_replace( ',', '%2C', $font_url ) );
+}
+add_action( 'init', 'wilson_add_editor_styles' );
 
 
 // Add footer widget areas
@@ -334,9 +341,15 @@ class Wilson_Customize {
             'title' => __( 'Wilson Options', 'wilson' ), //Visible title of section
             'priority' => 35, //Determines what order this appears in
             'capability' => 'edit_theme_options', //Capability needed to tweak
-            'description' => __('Allows you to customize some settings for Wilson.', 'wilson'), //Descriptive tooltip
+            'description' => __('Allows you to customize theme options for Wilson.', 'wilson'),
          ) 
       );
+      
+	  $wp_customize->add_section( 'wilson_logo_section' , array(
+		    'title'       => __( 'Logo', 'wilson' ),
+		    'priority'    => 40,
+		    'description' => __('Upload a logo to replace the default site name and description in the sidebar','wilson'),
+	  ) );
       
       //2. Register new settings to the WP database...
       $wp_customize->add_setting( 'accent_color', //No need to use a SERIALIZED name, as `theme_mod` settings already live under one db record
@@ -346,7 +359,13 @@ class Wilson_Customize {
             'capability' => 'edit_theme_options', //Optional. Special permissions for accessing this setting.
             'transport' => 'postMessage', //What triggers a refresh of the setting? 'refresh' or 'postMessage' (instant)?
          ) 
-      );      
+      );
+      
+      $wp_customize->add_setting( 'wilson_logo', 
+      	array( 
+      		'sanitize_callback' => 'esc_url_raw'
+      	) 
+      );
             
       //3. Finally, we define the control itself (which links a setting to a section and renders the HTML controls)...
       $wp_customize->add_control( new WP_Customize_Color_Control( //Instantiate the color control class
@@ -360,10 +379,16 @@ class Wilson_Customize {
          ) 
       ) );
       
+      $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wilson_logo', array(
+		    'label'    => __( 'Logo', 'wilson' ),
+		    'section'  => 'wilson_logo_section',
+		    'settings' => 'wilson_logo',
+	  ) ) );
+      
       //4. We can also change built-in settings by modifying properties. For instance, let's make some stuff use live preview JS...
       $wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
       $wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
-      $wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+      $wp_customize->get_setting( 'accent_color' )->transport = 'postMessage';
       $wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
    }
 
@@ -375,6 +400,7 @@ class Wilson_Customize {
 	      <style type="text/css">
 	           <?php self::generate_css('.blog-title a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.blog-menu a:hover', 'color', 'accent_color'); ?>
+	           <?php self::generate_css('.blog-menu .current-menu-item > a', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.featured-media .sticky-post', 'background-color', 'accent_color'); ?>
 	           <?php self::generate_css('.post-title a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.post-meta a:hover', 'color', 'accent_color'); ?>
@@ -382,6 +408,10 @@ class Wilson_Customize {
 	           <?php self::generate_css('.post-content a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.blog .format-quote blockquote cite a:hover', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.post-content a.more-link:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::generate_css('.post-content fieldset legend', 'background-color', 'accent_color'); ?>
+	           <?php self::generate_css('.post-content input[type="submit"]:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::generate_css('.post-content input[type="reset"]:hover', 'background-color', 'accent_color'); ?>
+	           <?php self::generate_css('.post-content input[type="button"]:hover', 'background-color', 'accent_color'); ?>
 	           <?php self::generate_css('.content .button:hover', 'background-color', 'accent_color'); ?>
 	           <?php self::generate_css('.post-cat-tags a', 'color', 'accent_color'); ?>
 	           <?php self::generate_css('.post-cat-tags a:hover', 'color', 'accent_color'); ?>
@@ -425,6 +455,7 @@ class Wilson_Customize {
 	           <?php self::generate_css('.flickr_badge_image a:hover img', 'background', 'accent_color'); ?>
 	           <?php self::generate_css('.tagcloud a:hover', 'background', 'accent_color'); ?>
 	           <?php self::generate_css('.credits a:hover', 'color', 'accent_color'); ?>
+	           <?php self::generate_css('.mobile-menu a:hover', 'background', 'accent_color'); ?>
 	      </style> 
 	      
 	      <!--/Customizer CSS-->
@@ -468,7 +499,4 @@ add_action( 'wp_head' , array( 'Wilson_Customize' , 'header_output' ) );
 // Enqueue live preview javascript in Theme Customizer admin screen
 add_action( 'customize_preview_init' , array( 'Wilson_Customize' , 'live_preview' ) );
 
-add_filter( 'wilson_right_credit', function($value) {
-	return date('j.m.Y');
-});
 ?>
