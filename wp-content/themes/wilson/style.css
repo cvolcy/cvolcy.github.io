@@ -2106,3 +2106,6 @@ img#wpstats { display: none; }
 	.searchform .searchsubmit { right: 20px; }
 	
 }
+.sidebar .widgets .textwidget .adsbygoogle {
+    margin-left: -25px;
+}
