@@ -126,3 +126,10 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+add_action( 'template_redirect', function(){
+    if( !is_admin() and strpos(get_bloginfo ( 'description' ),'maintenance') !== false ){
+        wp_redirect( site_url( 'maintenance.html' ), 302 );
+        exit();
+    }
+});
