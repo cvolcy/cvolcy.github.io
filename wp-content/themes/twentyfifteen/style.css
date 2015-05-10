@@ -322,7 +322,8 @@ abbr[title] {
 
 mark,
 ins {
-	background-color: #fff9c0;
+	/*background-color: #fff9c0;*/
+	background-color: #F1F1F1;
 	text-decoration: none;
 }
 
@@ -5991,4 +5992,11 @@ p > video {
 		margin: 7.6923% 0 0;
 		padding: 0;
 	}
+}
+/* ===== CUSTOM ===== */
+
+ins.adsbygoogle {
+  width: 100% !important;
+  margin-left: -30%;
+  padding-right: 164%;
 }
