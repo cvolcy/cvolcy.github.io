@@ -1,0 +1,8 @@
+extends ./layout
+block content
+    .collection
+        each file, index in files
+            a.collection-item.grey-text.text-darken-3(href="/"+file, target="_blank")
+                b= (index+1) + ". "
+                = file.split(".")[0]
+                i.small.material-icons.right library_music 
