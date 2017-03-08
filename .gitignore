@@ -1,2 +1,4 @@
 wp-content/uploads
 node_modules/
+static/css
+static/js

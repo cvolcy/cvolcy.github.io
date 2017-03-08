@@ -33,7 +33,7 @@ gulp.task('scripts', function(){
     }}))
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
+    .pipe(concat('site.js'))
     .pipe(babel())
     .pipe(gulp.dest('static/js/'))
     .pipe(rename({suffix: '.min'}))
@@ -41,7 +41,11 @@ gulp.task('scripts', function(){
     .pipe(gulp.dest('static/js/'))
 });
 
-gulp.task('default', function(){
+gulp.task('build', ["styles", "scripts"]);
+
+gulp.task('default', ["build"]);
+
+gulp.task('dev-watch', ["styles", "scripts"], function(){
   gulp.watch("content/sass/**/*.scss", ['styles']);
   gulp.watch("content/scripts/**/*.js", ['scripts']);
 });

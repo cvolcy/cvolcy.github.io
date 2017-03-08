@@ -1,15 +1,9 @@
-const http 	= require('http'),
-	path 	= require('path'),
+const path 	= require('path'),
 	express = require('express'),
 	bodyParser 	= require('body-parser'),
-	morgan 	= require('morgan'),
-	fs 		= require('fs'),
-	md 		= require('markdown-it')({
-  				html:true
-			});
+	morgan 	= require('morgan');
 
 var app = express();
-var server = http.createServer(app);
 
 // App Configuration
 app.use(bodyParser.json());
@@ -22,22 +16,27 @@ app.get("/", (req, res, next) => {
 	res.render('index');
 });
 
-app.get("/project/:project", (req, res, next) => {
-	let project = req.params.project.replace(/[^\-0-9a-zÀ-ÿ]/gi, '_').toLowerCase();
-	let ppath = path.resolve(__dirname, 'projects', project + '.md');
+app.use("/project", require("./routers/projects"));
 
-	console.log(`Trying to render project "${project}" from path "${ppath}"`);
+app.use(function(req, res, next){
+  res.status(404);
 
-	fs.readFile(ppath, 'utf8', (err,data) => {
-		if (err) {
-			return res.redirect('/');
-		}
-		let projectTemplate = md.render(data);
-		res.render('project', { project: projectTemplate });
-	});
+  // respond with html page
+  if (req.accepts('html')) {
+    res.render('404', { url: req.url });
+    return;
+  }
+
+  // respond with json
+  if (req.accepts('json')) {
+    res.send({ error: 'Not found' });
+    return;
+  }
+
+  // default to plain-text. send()
+  res.type('txt').send('Not found');
 });
 
-server.listen(process.env.PORT || 4000, process.env.IP || "0.0.0.0", () => {
-	let addr = server.address();
-	console.log("Server listening at", addr.address + ":" + addr.port);
+app.listen(process.env.PORT || 4000, process.env.IP || "0.0.0.0", () => {
+	console.log("Server listening at http://" + (process.env.IP || "0.0.0.0") + ":" + (process.env.PORT || 4000));
 });

@@ -1,3 +1,5 @@
 extends ./layout
+prepend title
+  = project.charAt(0).toUpperCase() + project.slice(1) + ' | '
 block content
-  !=project 
+  !=template
