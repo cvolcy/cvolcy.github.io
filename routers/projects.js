@@ -2,7 +2,8 @@ const express = require('express'),
   fs      = require('fs'),
   path    = require('path'),
   md      = require('markdown-it')({
-    html:true
+    html:true,
+    langPrefix: ""
   });
 
 var router = express.Router();
