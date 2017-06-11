@@ -13,7 +13,7 @@ Et apprendre [NodeJs](https://nodejs.org/) par la même occasion.
 
 Ce projet m’a permis d’en apprendre un minimum au sujet de [NodeJS](https://nodejs.org/) un framework de serveur web ayant une architecture orienté vers les évènements. J’ai l’occasion de lire quelque tutoriel pour me permettre de faire le fameux « Hello World ».
 
-Ensuite pour aller plus loin, j’ai à apprendre comment utiliser le framework [ExpressJs](http://expressjs.com/) (équivalent de Sinatra [ruby], mais pour [NodeJS](https://nodejs.org/)) qui me permet de gérer beaucoup plus facilement la gestion des pages, gabarits et de leur rendu.
+Ensuite pour aller plus loin, j’ai à apprendre comment utiliser le framework [ExpressJs](http://expressjs.com/) qui me permet de gérer beaucoup plus facilement la gestion des pages, gabarits et de leur rendu.
 
 Le cœur de l’application est géré par la librairie [Socket.io](http://socket.io/) qui me permet de gérer la communication en temps réel entre le client et le serveur.
 
