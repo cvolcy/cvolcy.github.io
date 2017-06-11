@@ -1,0 +1,24 @@
+nav.top-nav.blue-grey.lighten-1
+  .container
+    .nav-wrapper
+      a.button-collapse.top-nav.full.hide-on-large-only(href='#', data-activates='nav-mobile')
+        i.material-icons menu
+      a#logo-container.brand-logo(href='/')
+ul#nav-mobile.side-nav.fixed.blue-grey.lighten-5
+  li.logo
+    a.brand-logo(href='/')
+      img(src="/images/logo-white.png")
+  li.bold
+    a.waves-effect.waves-teal(href='/') Accueil
+  li.no-padding
+    ul.collapsible.collapsible-accordion
+      li.bold
+        a.collapsible-header.waves-effect.waves-teal Projets
+        .collapsible-body.blue-grey.lighten-5
+          ul
+            li
+              a(href='/project/gifmaker') GifMaker
+  //- li.bold
+  //-   a.waves-effect.waves-teal(href='themes.html')
+  //-     | Themes
+  //-     span.new.badge
