@@ -1,1 +1,39 @@
-// nothing 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.collection a.collection-item i.small {
+  vertical-align: middle;
+}
+header, main, footer {
+    padding-left: 300px;
+}
+
+ul.side-nav.fixed li a {
+    padding: 0 16px;
+}
+
+nav #logo-container {
+  background-image: url(/images/logo-white.png);
+  height: 60px;
+  width: 175px;
+  background-position-y: 90px;
+}
+
+#nav-mobile a.brand-logo {
+  height: 200px;
+  text-align: center;
+  filter: invert(100%);
+}
+
+@media only screen and (max-width: 992px){
+  header, main, footer {
+      padding-left: 0;
+  }
+}

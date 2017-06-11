@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "http-server -o -c-1",
     "dev-start": "nodemon server.js & node_modules/.bin/gulp dev-watch",
-    "build-assets": "node_modules/.bin/gulp build"
+    "build-assets": "node_modules/.bin/gulp build",
+    "postinstall": "gulp default"
   },
   "author": "",
   "license": "ISC",
