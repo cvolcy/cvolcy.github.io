@@ -17,6 +17,7 @@ app.get("/", (req, res, next) => {
 });
 
 app.use("/project", require("./routers/projects"));
+app.use("/misc", require("./routers/misc"));
 
 app.use(function(req, res, next){
   res.status(404);
