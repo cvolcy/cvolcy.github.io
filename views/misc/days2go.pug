@@ -1,0 +1,13 @@
+extends ../layout
+prepend title
+  |Days 2 go
+block content
+  #days2go.center
+    h1(title='Days to Go', data-tad-bind='title') Days to Go
+    .digit(data-tad-bind='days')
+        span#number
+        span  days
+    .date
+        | Time 
+        span until 
+        span Monday, April 23, 2018

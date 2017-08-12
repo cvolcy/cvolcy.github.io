@@ -22,4 +22,8 @@ router.get('/images', function (req, res) {
     });
 });
 
+router.get("/days2go", (req, res) => {
+    res.render('misc/days2go');
+})
+
 module.exports = router;

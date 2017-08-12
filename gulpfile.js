@@ -31,7 +31,7 @@ gulp.task('scripts', function(){
         console.log(error.message);
         this.emit('end');
     }}))
-    .pipe(jshint())
+    .pipe(jshint({ esversion: 6 }))
     .pipe(jshint.reporter('default'))
     .pipe(concat('site.js'))
     .pipe(babel())
