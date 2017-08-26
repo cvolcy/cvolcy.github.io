@@ -1,18 +1,17 @@
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  position: relative;
+  padding-bottom: 30px;
 }
+@import "footer";
 
-main {
-  flex: 1 0 auto;
+main, header, footer {
+  .container {
+    width: 95%;
+  }
 }
 
 .collection a.collection-item i.small {
   vertical-align: middle;
-}
-header, main, footer {
-    padding-left: 300px;
 }
 
 ul.side-nav.fixed li a {
@@ -20,20 +19,31 @@ ul.side-nav.fixed li a {
 }
 
 nav #logo-container {
-  background-image: url(/images/logo-white.png);
-  height: 60px;
-  width: 175px;
-  background-position-y: 90px;
-}
+  display: inline-block;
+  height: 64px;
+  .logo {
+      overflow: hidden;
+      border-radius: 50%;
+      border: 1px solid #333333;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      vertical-align: middle;
 
-#nav-mobile a.brand-logo {
-  height: 200px;
-  text-align: center;
-  filter: invert(100%);
-}
-
-@media only screen and (max-width: 992px){
-  header, main, footer {
-      padding-left: 0;
+      img {
+        width: 100%;
+      }
+  }
+  .brand {
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 18px;
+    margin-left: 10px;
+    margin-top: 7px;
+    width: 70px;
+    height: 40px;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
   }
 }

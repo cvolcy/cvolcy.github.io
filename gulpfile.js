@@ -17,7 +17,10 @@ gulp.task('styles', function(){
         this.emit('end');
     }}))
     .pipe(sass())
-    .pipe(autoprefixer('last 2 versions'))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(gulp.dest('static/css/'))
     .pipe(rename({suffix: '.min'}))
     .pipe(minifycss())
