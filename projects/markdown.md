@@ -1,5 +1,3 @@
-## Markdown
-
 Markdown-Volcy est un simple éditeur de texte de type markdown. Cette application a été conçue avec le framework Electron de Github qui permet de développer des applications de bureau cross plate-forme avec les technologies du web. Ce système est également grandement inspirée de l’application Mou.
 
 ### Fonctionnalités

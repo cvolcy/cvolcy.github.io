@@ -1,5 +1,3 @@
-## GifMaker
-
 Dans l’objectif de développer mes connaissances en [NodeJs](https://nodejs.org/), j’ai eu l’idée de développer une app web qui convertit un lien YouTube en GIF.
 
 L’idée me venue en tête puisque dans la culture de l’entreprise pour laquelle je travaillais à l’époque, le langage de communication #1 dans le chat de l’entreprise était les GIF.

@@ -1,5 +1,3 @@
-## RTC-drive
-
 J’ai découvert lorsque du dernier Google I/O, conférence annuelle de Google, la technologie WebRTC.
 
 Cette technologie m’a tout de suite séduit puisqu’elle me permettait d’établir des connexions entre navigateurs, leur permettant d’échanger de l’information. En plus, cela s’effectue sans faire usage d’un intermédiaire lors de ces transferts.

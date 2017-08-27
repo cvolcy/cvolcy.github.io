@@ -1,14 +1,6 @@
-body {
-  position: relative;
-  padding-bottom: 30px;
-}
+@import "layout";
+@import "header";
 @import "footer";
-
-main, header, footer {
-  .container {
-    width: 95%;
-  }
-}
 
 .collection a.collection-item i.small {
   vertical-align: middle;
@@ -16,34 +8,4 @@ main, header, footer {
 
 ul.side-nav.fixed li a {
     padding: 0 16px;
-}
-
-nav #logo-container {
-  display: inline-block;
-  height: 64px;
-  .logo {
-      overflow: hidden;
-      border-radius: 50%;
-      border: 1px solid #333333;
-      width: 50px;
-      height: 50px;
-      display: inline-block;
-      vertical-align: middle;
-
-      img {
-        width: 100%;
-      }
-  }
-  .brand {
-    font-size: 16px;
-    color: #FFFFFF;
-    line-height: 18px;
-    margin-left: 10px;
-    margin-top: 7px;
-    width: 70px;
-    height: 40px;
-    text-align: left;
-    display: inline-block;
-    vertical-align: middle;
-  }
 }
