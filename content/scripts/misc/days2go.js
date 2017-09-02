@@ -10,5 +10,5 @@ $(function(){
 
     $("#days2go #number").text(nb_days);
     $('title').text(""+ nb_days + " days 2 go");
-    $("#days2go span:last").text(days2goDate.toDateString())
+    $("#days2go span:last").text(days2goDate.toDateString());
 });

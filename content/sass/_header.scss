@@ -7,7 +7,7 @@ header {
     nav {
         transition: all 500ms;
 
-        &.filtered {
+        &.purple.darken-4.filtered {
             background-color: transparent !important;
             box-shadow: none;
         }

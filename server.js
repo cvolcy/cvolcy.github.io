@@ -13,7 +13,8 @@ app.use(express.static(path.resolve(__dirname, 'static')));
 app.set('view engine', 'pug');
 
 app.get("/", (req, res, next) => {
-	res.render('index');
+  res.redirect("/project/markdown");
+	// res.render('index');
 });
 
 app.use("/project", require("./routers/projects"));
