@@ -1,9 +1,17 @@
 const path 	= require('path'),
 	express = require('express'),
 	bodyParser 	= require('body-parser'),
-	morgan 	= require('morgan');
+  morgan 	= require('morgan'),
+  mongoose   = require('mongoose');
 
 var app = express();
+
+// MongoDB setup
+mongoose.connect(process.env.MONGODB_URI);
+mongoose.connection
+ .on('error', (error) => { console.warn('Warning', error); });
+mongoose.Promise = global.Promise;
+require('./app/models/models.js');
 
 // App Configuration
 app.use(bodyParser.json());
@@ -13,8 +21,11 @@ app.use(express.static(path.resolve(__dirname, 'static')));
 app.set('view engine', 'pug');
 
 app.get("/", (req, res, next) => {
-  res.redirect("/project/markdown");
-	// res.render('index');
+  let Settings = mongoose.model("Settings");
+  Settings.findOne().then((settings) => {
+    console.log(settings);
+    res.redirect("/project/" + settings.homeRedirect);
+  });
 });
 
 app.use("/project", require("./routers/projects"));

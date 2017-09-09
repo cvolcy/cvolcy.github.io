@@ -4,3 +4,4 @@ static/css
 static/js
 npm-debug.log
 .vscode/*
+nodemon.json
