@@ -3,10 +3,12 @@ prepend title
   |Days 2 go
 block content
   #days2go.center
-    h1(title='Days to Go', data-tad-bind='title') Days to Go
+    h1(title='Days to Go', data-tad-bind='title')
+      span#number 
+      span  Days
     .digit(data-tad-bind='days')
         span#number
-        span  days
+        span  Days to Go
     .date
         | Time 
         span until 
