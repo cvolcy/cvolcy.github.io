@@ -8,8 +8,19 @@
 
 <style lang="scss">
 body {
-  background-color: #13172e;
-  color: #b0c6d9;
+  background-color: $bg-color;
+  color: $color-primary;
+
+  a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $link-hover-color;
+      text-decoration: revert;
+    }
+  }
+
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -23,10 +34,10 @@ body {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    text-transform: uppercase;
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: $link-active-color;
     }
   }
 }
