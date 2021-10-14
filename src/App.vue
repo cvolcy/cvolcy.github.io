@@ -1,11 +1,17 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <Header />
   <router-view/>
 </template>
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component';
+import Header from '@/components/header.vue';
 
+@Options({
+  components: { Header },
+})
+export default class About extends Vue {
+}
+</script>
 <style lang="scss">
 body {
   background-color: $bg-color;
@@ -14,6 +20,7 @@ body {
   a {
     color: $link-color;
     text-decoration: none;
+    transition: color 400ms, background-color 400ms;
 
     &:hover {
       color: $link-hover-color;
@@ -27,18 +34,5 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    text-transform: uppercase;
-
-    &.router-link-exact-active {
-      color: $link-active-color;
-    }
-  }
 }
 </style>
