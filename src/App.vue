@@ -1,13 +1,17 @@
 <template>
   <Header />
-  <router-view/>
+  <div class="content">
+    <router-view/>
+  </div>
+  <Footer />
 </template>
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import Footer from '@/components/Footer.vue';
 import Header from '@/components/header.vue';
 
 @Options({
-  components: { Header },
+  components: { Footer, Header },
 })
 export default class About extends Vue {
 }
@@ -34,5 +38,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+
+  .content {
+    margin-top: 30px;
+    min-height: calc(100vh - 230px);
+  }
 }
 </style>
