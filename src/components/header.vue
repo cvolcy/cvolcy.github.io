@@ -9,6 +9,9 @@
             <router-link to="/">Home</router-link>
           </li>
           <li>
+            <router-link to="/projects">Projects</router-link>
+          </li>
+          <li>
             <router-link to="/about">About</router-link>
           </li>
         </ul>
@@ -42,6 +45,7 @@ export default class Header extends Vue {
   display: flex;
   justify-content: space-between;
   height: 30px;
+  border-bottom: solid 1px $border-color;
 
   &.sticky {
     z-index: 9999;
@@ -49,7 +53,6 @@ export default class Header extends Vue {
     top: 0;
     right: 0;
     left: 0;
-    border-bottom: solid 1px #2e355a;
     background-color: rgba($bg-color, 0.9);
   }
 
