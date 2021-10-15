@@ -1,5 +1,7 @@
 module.exports = {
-  runtimeCompiler: true,
+  configureWebpack: {
+    devtool: 'source-map',
+  },
   css: {
     loaderOptions: {
       sass: {
@@ -7,4 +9,5 @@ module.exports = {
       },
     },
   },
+  runtimeCompiler: true,
 };
