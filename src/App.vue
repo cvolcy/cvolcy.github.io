@@ -1,6 +1,6 @@
 <template>
   <Header />
-  <div class="content">
+  <div class="container">
     <router-view/>
   </div>
   <Footer />
@@ -37,11 +37,15 @@ body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
 
-  .content {
+  > .container {
     margin-top: 30px;
-    min-height: calc(100vh - 230px);
+    min-height: calc(100vh - 193px);
+
+    @include mobile {
+      margin-right: 10px;
+      margin-left: 10px;
+    }
   }
 }
 </style>

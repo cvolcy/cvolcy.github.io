@@ -1,20 +1,18 @@
 <template>
   <footer id="footer">
     <div class="nav">
-      <ul class="menu">
-        <li class="item-165"><a href="#">HOME</a></li>
-        <li class="item-166"><a href="#">ABOUT</a></li>
-        <li class="item-167"><a href="#">BOOKS</a></li>
-        <li class="item-168"><a href="#">AWARDS</a></li>
-        <li class="item-169"><a href="#">CONTACT</a></li>
-      </ul>
-      <div id="sp-footer2" class="col-lg-3 ">
-        <div class="sp-column ">
-          <span class="sp-copyright">© 2013-2021. All Rights Reserved.</span>
-        </div>
+      <div class="level">
+        <div class="level-item has-text-centered"><a href="#">HOME</a></div>
+        <div class="level-item has-text-centered"><a href="#">ABOUT</a></div>
+        <div class="level-item has-text-centered"><a href="#">BOOKS</a></div>
+        <div class="level-item has-text-centered"><a href="#">AWARDS</a></div>
+        <div class="level-item has-text-centered"><a href="#">CONTACT</a></div>
       </div>
     </div>
-  </footer>
+    <div class="copyright">
+      <span>© 2013-2021. All Rights Reserved.</span>
+    </div>
+</footer>
 </template>
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
@@ -24,24 +22,33 @@ export default class Footer extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-.nav {
-  padding: 30px;
-  align-items: center;
+#footer {
   display: flex;
-  justify-content: space-around;
-  height: 30px;
   border-top: 1px solid $border-color;
+    padding: 30px;
+    justify-content: space-around;
+    flex-wrap: wrap;
 
-  ul {
-    list-style: none;
-    text-align: center;
-    position: relative;
+  .nav {
+    align-items: center;
+    display: flex;
+    flex: 1 1 207px;
+    justify-content: center;
+    margin-bottom: 15px;
 
-    li {
-      display: inline-block;
-      position: relative;
-      padding: 0 45px 0 0;
+    .level {
+      margin: 0;
+
+      .level-item {
+        margin: 0 15px 15px;
+      }
     }
+  }
+
+  .copyright {
+    display: flex;
+    flex-basis: 300px;
+    justify-content: center;
   }
 }
 </style>
