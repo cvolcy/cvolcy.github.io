@@ -1,0 +1,10 @@
+$scheme-main: $bg-color;
+$text: $color-primary;
+$link: $link-color;
+$link-active: $link-active-color;
+$link-hover: lighten($link-active-color, 20%);
+
+@import "bulma/sass/base/_all.sass";
+@import "bulma/sass/elements/container.sass";
+@import "bulma/sass/components/level.sass";
+@import "bulma/sass/grid/columns.sass";
