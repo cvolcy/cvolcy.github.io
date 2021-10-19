@@ -7,8 +7,8 @@
 </template>
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import Header from '@/components/Header.vue';
 import Footer from '@/components/Footer.vue';
-import Header from '@/components/header.vue';
 
 @Options({
   components: { Footer, Header },
@@ -18,11 +18,7 @@ export default class About extends Vue {
 </script>
 <style lang="scss">
 body {
-  background-color: $bg-color;
-  color: $color-primary;
-
   a {
-    color: $link-color;
     text-decoration: none;
     transition: color 400ms, background-color 400ms;
 
@@ -39,8 +35,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   > .container {
-    margin-top: 30px;
-    min-height: calc(100vh - 193px);
+    padding-top: 80px;
+    min-height: calc(100vh - 103px);
 
     @include mobile {
       margin-right: 10px;
