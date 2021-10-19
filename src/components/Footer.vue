@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="copyright">
-      <span>© 2013-2021. All Rights Reserved.</span>
+      <span>© 2017-{{new Date().getFullYear()}}. All Rights Reserved.</span>
     </div>
 </footer>
 </template>
@@ -25,9 +25,9 @@ export default class Footer extends Vue {
 #footer {
   display: flex;
   border-top: 1px solid $border-color;
-    padding: 30px;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  padding: 30px;
+  justify-content: space-around;
+  flex-wrap: wrap;
 
   .nav {
     align-items: center;
