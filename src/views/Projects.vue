@@ -5,8 +5,8 @@
     </div>
     <div class="columns is-multiline">
       <div
-        v-for="project in projects"
-        :key="project.title"
+        v-for="(project, index) in projects"
+        :key="index"
         class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen"
       >
         <div class="card">
@@ -21,14 +21,21 @@
           </div>
           <div class="card-content">
             <div class="media">
-              <div class="media-left">
+              <div
+                v-if="project.image"
+                class="media-left">
                 <figure class="image is-48x48">
-                  <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                  <img :src="project.image" alt="Placeholder image" />
                 </figure>
               </div>
               <div class="media-content">
                 <p class="title is-4">{{ project.title }}</p>
-                <p class="subtitle is-6">@johnsmith</p>
+                <p
+                  v-if="project.subtitle"
+                  class="subtitle is-6"
+                >
+                  {{ project.subtitle }}
+                </p>
               </div>
             </div>
 
@@ -40,7 +47,12 @@
                 {{ project.description }}
               </p>
               <br>
-              <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+              <time
+                v-if="project.createdAt"
+                :datetime="project.createdAt"
+              >
+                {{ formatDate(index) }}
+              </time>
             </div>
           </div>
         </div>
@@ -58,7 +70,8 @@ interface IProject {
   link: string,
   tags: string[],
   backgroundImage: string,
-  color: string
+  color: string,
+  createdAt?: string,
 }
 
 export default class Projects extends Vue {
@@ -126,6 +139,21 @@ export default class Projects extends Vue {
     backgroundImage: 'https://s3.amazonaws.com/cvolcy/uploads/2019/03/dwarf_mongoose2.jpg',
     color: '#ff5722',
   }];
+
+  formatDate(index:number): string {
+    const value:string = this.projects[index].createdAt as string;
+
+    const date = new Date(value);
+
+    return date.toLocaleString(undefined, {
+      hour12: true,
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+    });
+  }
 }
 </script>
 <style lang="scss" scoped>

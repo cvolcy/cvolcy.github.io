@@ -25,7 +25,8 @@ export default class Footer extends Vue {
 #footer {
   display: flex;
   border-top: 1px solid $border-color;
-  padding: 30px;
+  padding: 30px 30px 0;
+  margin-top: 30px;
   justify-content: space-around;
   flex-wrap: wrap;
 

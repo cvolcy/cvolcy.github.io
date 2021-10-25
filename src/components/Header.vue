@@ -46,7 +46,7 @@ export default class Header extends Vue {
 @import 'bulma/sass/components/navbar';
 
 nav.navbar {
-  background-color: initial;
+  background-color: $bg-color;
   border-bottom: solid 1px $border-color;
 
   .navbar-burger {
