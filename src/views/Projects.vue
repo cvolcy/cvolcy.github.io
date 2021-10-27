@@ -53,6 +53,13 @@
               >
                 {{ formatDate(index) }}
               </time>
+              <a
+                v-if="project.link"
+                :href="project.link"
+                target="_blank"
+              >
+                Demo Here
+              </a>
             </div>
           </div>
         </div>
