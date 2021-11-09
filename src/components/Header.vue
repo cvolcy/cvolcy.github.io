@@ -10,8 +10,13 @@
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
         </a>
-        <a class="navbar-item" href="https://bulma.io">
-          <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+        <a class="navbar-item" href="/">
+          <img
+            src="../assets/logo2-white-transparent-150x150.png"
+            alt="CV Logo"
+            width="28"
+            height="28"
+          />
         </a>
       </div>
       <div :class="['navbar-menu', {'is-active': menuIsActive }]">
