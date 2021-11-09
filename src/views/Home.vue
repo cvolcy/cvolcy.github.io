@@ -2,7 +2,7 @@
   <div class="home">
     <div class="columns is-mobile">
       <div id="photo" class="column is-5-tablet is-6-desktop">
-        <img alt="cvolcy avatar" src="../assets/logo.png">
+        <img alt="cvolcy avatar" src="../assets/avatar.png">
       </div>
       <div id="presentation" class="column is-7-tablet is-6-desktop">
         <h2>Hello</h2>
