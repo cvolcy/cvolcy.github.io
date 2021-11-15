@@ -21,6 +21,12 @@ if (process.env.NODE_ENV === 'production') {
     },
     updated() {
       console.log('New content is available; please refresh.');
+      /*
+        TODO: Show notification that a refresh is needed.
+        The new content is auto-downloaded since the parameter
+        pwa:workboxOptions:skipWaiting = true in vue.config.js.
+      */
+      window.location.reload();
     },
     offline() {
       console.log('No internet connection found. App is running in offline mode.');

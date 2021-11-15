@@ -11,5 +11,10 @@ module.exports = {
       },
     },
   },
+  pwa: {
+    workboxOptions: {
+      skipWaiting: true,
+    },
+  },
   runtimeCompiler: true,
 };
