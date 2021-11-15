@@ -43,6 +43,8 @@ export default class Home extends Vue {}
     img {
       height: 100%;
       min-height: 250px;
+      max-width: 292px;
+      border-radius: 50%;
     }
   }
 
