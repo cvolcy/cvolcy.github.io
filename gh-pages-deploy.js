@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 // eslint-disable-next-line import/no-extraneous-dependencies
-const execa = require('execa');
-const fs = require('fs');
+import { execa } from 'execa';
+import fs from 'fs';
 
 (async () => {
   try {
+    const currentBranch = (await execa('git', ['branch', '--show-current'])).stdout;
     await execa('git', ['checkout', '--orphan', 'gh-pages']);
 
     console.log('Building started...');
@@ -17,7 +18,7 @@ const fs = require('fs');
     console.log('Pushing to gh-pages...');
     await execa('git', ['push', 'origin', 'HEAD:gh-pages', '--force']);
     await execa('rm', ['-r', folderName]);
-    await execa('git', ['checkout', '-f', 'master']);
+    await execa('git', ['checkout', '-f', currentBranch]);
     await execa('git', ['branch', '-D', 'gh-pages']);
 
     console.log('Successfully deployed, check your settings');
