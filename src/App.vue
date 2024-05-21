@@ -2,6 +2,7 @@
 import { useColorMode } from '@vueuse/core'
 import MainNavbar from './components/MainNavbar.vue'
 import HelloWorld from './components/HelloWorld.vue'
+import AboutMe from './components/AboutMe.vue'
 
 useColorMode()
 </script>
@@ -10,6 +11,7 @@ useColorMode()
   <MainNavbar />
   <div class="container flex flex-col min-h-screen ">
     <HelloWorld />
+    <AboutMe />
   </div>
 </template>
 
