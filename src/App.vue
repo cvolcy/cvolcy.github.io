@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { useColorMode } from '@vueuse/core'
+import MainNavbar from './components/MainNavbar.vue'
 import HelloWorld from './components/HelloWorld.vue'
 
 useColorMode()
 </script>
 
 <template>
-  <div class="container min-h-screen">
+  <MainNavbar />
+  <div class="container flex flex-col min-h-screen ">
     <HelloWorld />
   </div>
 </template>
@@ -23,5 +25,11 @@ useColorMode()
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+</style>
+
+<style>
+html, body {
+  scroll-behavior: smooth;
 }
 </style>
