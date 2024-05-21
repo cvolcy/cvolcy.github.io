@@ -28,8 +28,8 @@ const toggleMenu = () => {
                 <div class="absolute right-0 w-64 h-full px-4 pb-4" @click.stop>
                     <ul>
                         <li class="text-right text-5xl"><a href="javascript:void(0)" class="block" @click="toggleMenu">x</a></li>
-                        <li class="py-2"><a href="javascript:void(0)" class="block">Home</a></li>
-                        <li class="py-2"><a href="javascript:void(0)" class="block">About</a></li>
+                        <li class="py-2"><a href="#" class="block">Home</a></li>
+                        <li class="py-2"><a href="#aboutme" class="block">About</a></li>
                         <li class="py-2"><a href="javascript:void(0)" class="block">Contact</a></li>
                     </ul>
                 </div>
