@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-col">
+    <div class="flex flex-col my-4">
         <p
             id="aboutme"
-            class="text-4xl mb-4"
+            class="text-4xl mb-4 uppercase"
         >
             ABOUT<br>ME
         </p>
