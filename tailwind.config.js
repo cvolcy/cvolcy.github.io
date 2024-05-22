@@ -5,14 +5,14 @@ module.exports = {
   darkMode: ["class"],
   safelist: ["dark"],
   prefix: "",
-  
+
   content: [
     './pages/**/*.{ts,tsx,vue}',
     './components/**/*.{ts,tsx,vue}',
     './app/**/*.{ts,tsx,vue}',
     './src/**/*.{ts,tsx,vue}',
 	],
-  
+
   theme: {
     container: {
       center: true,
@@ -23,6 +23,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
