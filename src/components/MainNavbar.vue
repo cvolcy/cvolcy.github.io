@@ -40,7 +40,7 @@ const mode = useColorMode();
                                 <ul @click="panelOpen = false">
                                     <li class="py-2"><a href="#" class="block">Home</a></li>
                                     <li class="py-2"><a href="#aboutme" class="block">About</a></li>
-                                    <li class="py-2"><a href="#projects" class="block">My Projects</a></li>
+                                    <li class="py-2"><a href="#projects" class="block">Projects</a></li>
                                     <!-- <li class="py-2"><a href="javascript:void(0)" class="block">Contact</a></li> -->
                                 </ul>
                                 <div class="flex flex-1 items-end">
