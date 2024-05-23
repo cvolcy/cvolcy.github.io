@@ -4,6 +4,7 @@ import MainNavbar from './components/MainNavbar.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import AboutMe from './components/AboutMe.vue'
 import Projects from './components/Projects.vue'
+import Skills from './components/Skills.vue'
 
 useColorMode()
 </script>
@@ -14,6 +15,7 @@ useColorMode()
     <HelloWorld />
     <AboutMe />
     <Projects />
+    <Skills />
   </div>
 </template>
 
