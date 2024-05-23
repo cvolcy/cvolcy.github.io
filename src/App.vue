@@ -5,6 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import AboutMe from './components/AboutMe.vue'
 import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
+import Footer from './components/Footer.vue'
 
 useColorMode()
 </script>
@@ -17,6 +18,7 @@ useColorMode()
     <Projects />
     <Skills />
   </div>
+  <Footer />
 </template>
 
 <style scoped>

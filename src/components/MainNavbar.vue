@@ -35,7 +35,7 @@ const mode = useColorMode();
                 <SheetContent>
                     <SheetHeader class="min-h-full">
                         <SheetTitle></SheetTitle>
-                        <SheetDescription class="flex flex-1">
+                        <SheetDescription class="flex flex-1 text-left">
                             <div class="flex flex-col min-h-full">
                                 <ul @click="panelOpen = false">
                                     <li class="py-2"><a href="#" class="block">Home</a></li>
