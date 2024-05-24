@@ -39,15 +39,7 @@ const skills = ref<ISkill[]>([{
 </script>
 
 <template>
-    <div id="skills"class="flex flex-col my-4">
-        <p class="text-4xl mb-4 uppercase">
-          My<br>Skills
-        </p>
-        <div class="mt-6 space-y-4">
-          <SkillCard v-for="(skill, i) in skills"
-            :index="i+1"
-            :skill="skill"
-          />
-        </div>
-    </div>
+  <div class="mt-6 space-y-4">
+    <SkillCard v-for="(skill, i) in skills" :index="i + 1" :skill="skill" />
+  </div>
 </template>

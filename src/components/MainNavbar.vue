@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useColorMode } from '@vueuse/core'
 import {
   Sheet,
   SheetContent,
@@ -9,9 +8,9 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet'
+import ThemeSwitcher from './navbar/ThemeSwitcher.vue';
 
 const panelOpen = ref(false)
-const mode = useColorMode();
 </script>
 
 <template>
@@ -44,9 +43,7 @@ const mode = useColorMode();
                                     <li class="py-2"><a href="#skills" class="block">Skills</a></li>
                                 </ul>
                                 <div class="flex flex-1 items-end">
-                                    <button @click="mode = mode === 'dark' ? 'light' : 'dark'">
-                                        {{ mode }} mode
-                                    </button>
+                                    <ThemeSwitcher />
                                 </div>
                             </div>
                         </SheetDescription>

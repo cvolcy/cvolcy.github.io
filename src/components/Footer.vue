@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useNow } from '@vueuse/core';
-import { LinkedinIcon } from 'lucide-vue-next';
+import { LinkedinIcon, GithubIcon } from 'lucide-vue-next';
 
 const now = useNow()
 </script>
@@ -12,6 +12,8 @@ const now = useNow()
             © 2014-{{ now.getFullYear() }} Clervens Volcy. All rights reserved.
         </p>
         <nav class="flex gap-4 sm:ml-auto sm:gap-6">
+            <a class="text-xs underline-offset-4 hover:underline"
+                href="https://github.com/cvolcy"><GithubIcon class="inline" /></a>
             <a class="text-xs underline-offset-4 hover:underline"
                 href="https://www.linkedin.com/in/clervens-volcy-b-ing-👨🏾‍💻-5522a670"><LinkedinIcon class="inline" /></a>
         </nav>

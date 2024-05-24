@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useColorMode } from '@vueuse/core'
+import Section from './components/Section.vue'
 import MainNavbar from './components/MainNavbar.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import AboutMe from './components/AboutMe.vue'
@@ -14,9 +15,24 @@ useColorMode()
   <MainNavbar />
   <div class="container flex flex-col min-h-screen ">
     <HelloWorld />
-    <AboutMe />
-    <Projects />
-    <Skills />
+    <Section id="aboutme">
+      <template #title>
+        ABOUT<br>ME
+      </template>
+      <AboutMe />
+    </Section>
+    <Section id="projects">
+      <template #title>
+        My<br>Project
+      </template>
+      <Projects />
+    </Section>
+    <Section id="skills">
+      <template #title>
+        MY<br>Skills
+      </template>
+      <Skills />
+    </Section>
   </div>
   <Footer />
 </template>
