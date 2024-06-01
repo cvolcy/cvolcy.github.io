@@ -53,7 +53,7 @@ const random_testimonials = computed(() => testimonials.value
     .map(a => [a, Math.random()])
     .sort((a,b) => {return a[1] < b[1] ? -1 : 1;})
     .slice(0, nb_testimonial)
-    .map(a => a[0]));
+    .map(a => a[0] as ITestimonial));
 
 interface ITestimonial {
     pravatarIndex: number,
