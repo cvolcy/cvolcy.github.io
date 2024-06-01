@@ -6,6 +6,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import AboutMe from './components/AboutMe.vue'
 import Projects from './components/Projects.vue'
 import Skills from './components/Skills.vue'
+import Testimonials from './components/Testimonials.vue'
 import Footer from './components/Footer.vue'
 
 useColorMode()
@@ -32,6 +33,12 @@ useColorMode()
         MY<br>Skills
       </template>
       <Skills />
+    </Section>
+    <Section id="testimonials">
+      <template #title>
+        MY<br>Testimonials
+      </template>
+      <Testimonials />
     </Section>
   </div>
   <Footer />

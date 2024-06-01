@@ -41,6 +41,7 @@ const panelOpen = ref(false)
                                     <li class="py-2"><a href="#aboutme" class="block">About</a></li>
                                     <li class="py-2"><a href="#projects" class="block">Projects</a></li>
                                     <li class="py-2"><a href="#skills" class="block">Skills</a></li>
+                                    <li class="py-2"><a href="#testimonials" class="block">Testimonials</a></li>
                                 </ul>
                                 <div class="flex flex-1 items-end">
                                     <ThemeSwitcher />
